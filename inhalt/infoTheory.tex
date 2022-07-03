@@ -1,0 +1,9 @@
+\section{Information Theory}
+
+\subsection*{Information Content}
+$-log_2 p(x)$: the more frequent the word, the lower its information content.
+e.g. the word type “blue” occurs ca. 3750 times in
+10000 tokens, and its information content is $-log_2(3750/10000) \approx$1.42 bits.
+
+\subsection*{Shannon Entropy}
+$H(X) = - \sum p(x) log_2(p(x))$: entropy as probability, how much information in average each token in the language carries. e.g. $H_{char}(Morse) = - (\frac{86}{136} * log_2(\frac{86}{136}) + \frac{50}{136} * log_2(\frac{50}{136})) \approx 0.949$ bits per character.
