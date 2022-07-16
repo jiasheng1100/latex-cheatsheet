@@ -1,0 +1,30 @@
+\section{Lambda Calculus}
+To represent parts of sentences or predicates in a fully compositional account. Allows to capture the compositionality of language
+\subsection*{Syntax}
+Add another clause to the type-theoretic language syntax \\
+(vii) If $\alpha$ is an expression of type a in L, and v is a variable of
+type b, then $\lambda v(\alpha)$ is an expression of type <b, a> in L.
+\subsection*{Lambda-Abstraction}
+We say that $\lambda v(\alpha)$ has been formed from $\alpha$ by abstraction
+over the formerly free variable v. Hence, the free
+occurrences of v in $\alpha$ are now bound by the $\lambda$-operator $\lambda$x. \\
+e.g. expression: S(x) of type t \\
+$\lambda$-abstraction: $\lambda$x(S(x)) of type <e,t> \\
+$\lambda$x(x) of type <e,e> \\
+$\lambda$x(B(y)(x)) of type <e,t> \\
+$\lambda$X(X(a) $\land$ X(b)) of type <<e,t>,t> \\
+\subsection*{Lambda-Conversion}
+remove the $\lambda$-operator and plug an expression into every occurrence of the variable which is bound by the $\lambda$-operator. \\
+e.g. $\lambda$x(S(x))(c) = S(c) \\
+$\lambda$x($\lambda$y(A(y)(x)))(c)(d)=$\lambda$y(A(y)(c))(d)=A(d)(c)\\
+$\lambda$-conversion is only valid when vairable v is not bound by a quantifier $\forall$ or $\exists$
+\subsection*{Modelling Compositionality}
+John smokes: $\lambda$x(S(x))(j)=S(j)\\
+smokes: $\lambda$x(S(x))\\
+smokes and drinks: $\lambda$x(S(x)$\land$D(x))
+Jumbo is grey: $\lambda$x(G(x))(j)=G(j) \\
+is grey: $\lambda$x(G(x)) \\
+Jumbo is: $\lambda$X(X(j) \\
+is: $\lambda$X($\lambda$x(X(x))) 
+\subsection*{Truth Valuation}
+For all entities d in the domain D it holds that h(d)=1 iff I(W)(d)=1. This illustrates that the denotation if $\lambda x(W(x))$ is indeed the same as one would expect for just the word walks represented by W.
