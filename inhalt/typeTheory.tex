@@ -1,24 +1,19 @@
 \section{Type theory}
-Tools to get to grips with frequent compositional structures in natural language (adj-n, adv-v, art-n, prep-np... combis)
-
+Tools to get to grips with frequent compositional structures in natural language (adj-n, adv-v, art-n, prep-np... combis), a higher-order logic
 \subsection*{Definition}
-\begin{enumerate}
-\item $e, t \in T$
-\item if $a, b \in T$, then $<a, b> \in T$
-\item nothing is an element of T except on the basis of clauses (i) and (ii).
-\end{enumerate}
-invalid: et, <e,e,t>, <e,<e,t>\\
-
+(i) $e, t \in T$\\
+(ii) if $a, b \in T$, then $<a, b> \in T$\\
+(iii) nothing is an element of T except on the basis of clauses (i) and (ii).\\
+invalid: et, <e,e,t>, <e,<e,t>
 \subsection*{Functional Application}
 If $\alpha$ = <e,t> and $\beta$ = e then $\alpha (\beta)$ = t. \\
 If $\alpha$ = <t,<t,e>> and $\beta$ = <t,e> then $\alpha (\beta)$ is not defined.
-
 \subsection*{Semantic Types}
 individual: e \\
 sentences: t \\
 1-place predicates (intransitive verb): <e,t> \\
 2-place predicates (transitive verb): <e,<e,t>> \\
-3-place predicates (ditransitive verb): <e.<e,<e,t>>> \\
+3-place predicates (ditransitive verb): <e,<e,<e,t>>> \\
 common nouns (e.g. dog): <e,t> \\
 NP (e.g. the dog): e \\
 determiners (e.g. the): <e,<e,t>> \\
@@ -27,25 +22,19 @@ adjectives as predicate modifiers(e.g. \emph{happy} dog): <<e,t>,<e,t>> \\
 adverbs(predicate modifier): <<e,t>,<e,t>> \\
 sentence modifier(e.g. not): <t,t> \\
 function(entity to entity) (e.g. the farther of): <e, e> \\
-One-place second-order predicate: <<e,t>,t> \\
-Two-place second-order predicate: <<e,t>,<<e,t>,t>> 
-
+1-place 2nd-order predicate: <<e,t>,t> \\
+2-place 2nd-order predicate: <<e,t>,<<e,t>,t>> 
 \subsection*{Syntax: Recursive Definition}
-\begin{enumerate}
-\item If $\alpha$ is a variable or a constant of type a in L, then $\alpha$ is an expression of type a in L.
-\item If $\alpha$ is an expression of type <a,b> in L, and $\beta$ is an expression of type a in L, then $(\alpha (\beta))$ is an expression of type b in L.
-\item If $\phi$ and $\psi$ are formulas in L, then so are $\neg \phi, (\phi \land \psi), (\phi \lor \psi), (\phi \to \psi), (\phi \leftrightarrow \psi)$.
-\item If $\phi$ is an expression \emph{of type t} in L and v is a variable (of arbitrary type a), then $\forall v \phi$ and $\exists v \phi$ are expression of type t in L.
-\item If $\alpha$ and $beta$ are expressions in L which belong to the same type, then $(\alpha = \beta)$ is an expression of type t in L.
-\item Every expression L is to be constructed by means of (i)-(v) in a finite number of steps.
-\end{enumerate}
-
-The \emph{formulas} are those expressions which are of type t. \\
-
+(i) If $\alpha$ is a variable or a constant of type a in L, then $\alpha$ is an expression of type a in L.\\
+(ii) If $\alpha$ is an expression of type <a,b> in L, and $\beta$ is an expression of type a in L, then $(\alpha (\beta))$ is an expression of type b in L.\\
+(iii) If $\phi$ and $\psi$ are formulas in L, then so are $\neg \phi, (\phi \land \psi), (\phi \lor \psi), (\phi \to \psi), (\phi \leftrightarrow \psi)$.\\
+(iv) If $\phi$ is an expression \emph{of type t} in L and v is a variable (of arbitrary type a), then $\forall v \phi$ and $\exists v \phi$ are expression of type t in L.\\
+(v) If $\alpha$ and $beta$ are expressions in L which belong to the same type, then $(\alpha = \beta)$ is an expression of type t in L.\\
+(vi) Every expression L is to be constructed by means of (i)-(v) in a finite number of steps.\\
+\emph{formulas}: expressions of type t. \\
 Difference to Predicate Logic: \\
 Jumbo befriends Maya. \\
 Predicate Logic: Bjm \\
 Type-theoretic logic: (B(m))(j) or alternatively B(m)(j) 
-
 \subsection*{Semantics}
 Truth valuations via pariticular interpretation functions defined for different types of expressions. e.g. interpretation function I for which it holds that: I(W)(d) = 1 iff d$\in$W, otherwise 0. 
