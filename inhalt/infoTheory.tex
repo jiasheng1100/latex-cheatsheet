@@ -4,10 +4,13 @@ $-log_2 p(x)$: the more frequent the word, the lower its information content.
 e.g. the word type “blue” occurs ca. 3750 times in
 10000 tokens, and its information content is $-log_2(3750/10000) \approx$1.42 bits.
 \subsection*{Shannon Entropy}
-$H(X) = - \sum p(x) log_2 p(x)$: entropy as probability, the average information content of information encoding units in the language. Measure of information encoding potential of a symbol system. The higher the uncertainty, the larger the entropy. e.g. $H_{char}(Morse) = - (\frac{86}{136} * log_2(\frac{86}{136}) + \frac{50}{136} * log_2(\frac{50}{136})) \approx 0.949$ bits per character. 
+$H(X) = - \sum p(x) log_2 p(x)$: entropy as probability, the average information content of information encoding units in the language. Measure of information encoding potential of a symbol system. The higher the uncertainty, the larger the entropy. e.g. $H_{char}(Morse) = - (\frac{86}{136} * log_2(\frac{86}{136}) + \frac{50}{136} * log_2(\frac{50}{136})) \approx 0.949$ bits per character. \\
+A series of studies proposed to use entropic measures to distinguish human writing from other types of symbol systems.
 \subsection*{Joint Entropy, Conditional Entropy}
 Joint Entropy: $H(X, Y) = - \sum \sum p(x, y) log_2 p(x, y)$ \\
-Conditional Entropy: $H(Y|X) = - \sum p(x) \sum p(y|x) log_2 p(y|x)$ The more ambiguity in language (uncertainty), the higher conditional entropy. No ambiguity -> 0.
+Conditional Entropy: $H(Y|X) = - \sum p(x) \sum p(y|x) log_2 p(y|x)$ The more ambiguity in language (uncertainty), the higher conditional entropy. No ambiguity -> 0.\\
+Ackerman \& Malouf (2013) propose two entropic measures for morphological complexity: the average entropy of a paradigm as a measure of enumerative
+complexity, and the average conditional entropy of cells as an integrative complexity measure.They are related to learnability.
 \subsection*{Probability Estimation}
 Maximum Likelihood (ML) \\
 Problems: unit problem, sample size problem, interdependence problem, extrapolation problem \\

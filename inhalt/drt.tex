@@ -1,0 +1,14 @@
+\section{Discourse Representation Theory}
+To deal with issues in the semantics and pragmatics of anaphora and tense\\
+Discourse representation structures:a hearer builds up a mental representation of the discourse as it unfolds, and that every incoming sentence prompts additions to that representation. 
+\subsection*{Anaphora Resolution}
+Anaphora as co-reference: \emph{John} likes \emph{his} donkey.\\
+Anaphora as binding: \emph{No farmer} likes \emph{his} donkey.\\
+Anaphora as neither co-reference nor binding: John owns \emph{a donkey}. \emph{It} is grey.\\
+\subsection*{Discourse Representation Structures}
+Merging: [x, y: farmer(x), donkey(y), chased(x,y)] + [v, w: caught(v, w)] = [x, y, v, w: farmer(x), donkey(y), chased(x,y), caught(v, w)]\\
+Anaphora Resolution: = [x, y, v, w: v=x, w=y, farmer(x), donkey(y), chased(x,y), caught(v,w)] = [x, y: farmer(x), donkey(y), chased(x,y), caught(x,y)]
+\subsection*{Complex DRS Conditions}
+\emph{Negation}: John doesn't own a donkey. It is grey. [1x,z: John(x), $\neg$[2y: donkey(y), owns(x,y)], grey(z)]. y is not accessible to z. x and z are accessible to y.\\
+\emph{Conditionals}: If John owns a donkey, he likes it. [1:[2x,y: John(x), donkey(y), owns(x,y)]$\to$[3v,w: likes(v,w)]]=[1:[2x,y,v,w: v=x, w=y, John(x), donkey(y), owns(x,y)]$\to$[3: likes(v,w)]]=[1:[2x,y: John(x), donkey(y), owns(x,y)]$\to$[3: likes(x,y)]]. x and y are accessible to v and w.\\
+\emph{Quantification}: Every farmer who owns a donkey, likes it. [1:[2x,y: farmer(x), donkey(y), owns(x,y)]$\forall x$[3v,w: likes(v,w)]]
