@@ -12,3 +12,9 @@ Anaphora Resolution: = [x, y, v, w: v=x, w=y, farmer(x), donkey(y), chased(x,y),
 \emph{Negation}: John doesn't own a donkey. It is grey. [1x,z: John(x), $\neg$[2y: donkey(y), owns(x,y)], grey(z)]. y is not accessible to z. x and z are accessible to y.\\
 \emph{Conditionals}: If John owns a donkey, he likes it. [1:[2x,y: John(x), donkey(y), owns(x,y)]$\to$[3v,w: likes(v,w)]]=[1:[2x,y,v,w: v=x, w=y, John(x), donkey(y), owns(x,y)]$\to$[3: likes(v,w)]]=[1:[2x,y: John(x), donkey(y), owns(x,y)]$\to$[3: likes(x,y)]]. x and y are accessible to v and w.\\
 \emph{Quantification}: Every farmer who owns a donkey, likes it. [1:[2x,y: farmer(x), donkey(y), owns(x,y)]$\forall x$[3v,w: likes(v,w)]]
+\subsection*{Accessibility}
+K' $\lor$ K'', then K is accessible to K' and K''. Note: in this particular case K' is not accessible to K''.
+\subsection*{Semantics}
+The truth-conditional semantics of the DRS language is given by defining when an embedding function verifies a DRS in a given model M.\\
+Embedding function f in DRT:\\
+f verifies a DRS K iff f verifies all conditions $Con_k$. f verifies P(x1,...,xn) iff <f(x1),...,f(xn)> $\in$ I(P).
