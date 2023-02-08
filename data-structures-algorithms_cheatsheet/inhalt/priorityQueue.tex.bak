@@ -1,0 +1,27 @@
+\section{Priority Queues}
+{\tiny a collection, an abstract data type, that stores items (key-value pairs)\\
+key: priority of the item\\
+value: actual data of interest\\
+its interface similar to a standard queue, but the item with the highest priority (minimum or maximum key value) instead of the first item entered into the queue is removed\\
+applications ranging from data compression to discrete optimization
+}\\
+\scriptsize{Operations}\\ {\tiny insert(k,v): similar to enqueue(v)\\
+remove(): similar to dequeue(), often called remove-min() or remove-max() depending on minimum or maximum key value that is considered having the highest priority
+}\\
+\scriptsize{Implementation}\\ 
+{\tiny unsorted list: insert O(1), remove O(n)\\
+sorted list: insert O(n), remove O(1)\\
+binary heap: insert O(logn), remove O(logn)\\
+(some improvements:\\
+d-ary heaps: insert O(logd n), remove O(dlogd n)\\
+fibonacci heaps: insert O(1), remove O(logn)
+}\\
+\scriptsize{Sorting with priority queues}\\ 
+{\tiny implemented with sorted list: = insertion sort O(n**2)\\
+use unsorted list: = selection sort O(n**2)\\
+use binary heap: = heap sort O(nlogn) (not stable; not in-place: needs O(n) extra space\\
+in-place heap sort:\\
+1. bottom-up heap construction\\
+2. iteratively remove the maximum element and place it at the end\\
+efficiency: heap construction O(n) + n*remove-min O(nlogn) = O(nlogn)
+}

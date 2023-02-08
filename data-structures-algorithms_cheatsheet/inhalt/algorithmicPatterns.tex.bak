@@ -1,0 +1,44 @@
+\section{Algorithmic patterns}
+\scriptsize{Recursion}\\
+{\tiny recursion depth:\\
+compilers/interpreters allocate space on a stack for the bookkeeping for each function call\\
+most environments limit the number of recursive calls: long chains of recursion are likely to cause errors
+}\\
+{\tiny tail recursion:\\
+e.g. linear search \\
+easy to convert to iteration\\
+easy to optimize, and optimized by many compilers (not by the Python interpreter)
+}\\
+\scriptsize{Brute force}
+{\tiny in some cases we may need to enumerate all possible cases (e.g. to find the best solution)\\
+common in combinatorial problems\\
+often intractable, practical only for small input sizes\\
+the beginning of finding a more efficient approach\\
+example: segmentation
+}\\
+\scriptsize{Divide and conquer}
+{\tiny divide the problem into smaller parts until it becomes trivial to solve\\
+once small parts are solved, results are combined\\
+goes well with recursion\\
+a particular flavor: binary search (sometimes called decrease and conquer)\\
+example: nearest neighbors, merge sort, quick sort, integer multiplication, matrix multiplication, fast Furrier transform\\
+not always yield good results, cost of merging should be less than the gain from the divisions
+}\\
+\scriptsize{Greedy algorithm} 
+{\tiny optimizes a local constraint\\
+results in correct solutions for some problems, in others they may result in "good enough" solutions\\
+efficient if works\\
+examples: graph algorithms (find shortest paths, scheduling)\\
+e.g. produce minimum number of coins for a particular sum s (not correct for coins of 10, 30, 40 and sum value of 60)
+}\\
+\scriptsize{Dynamic programming} 
+{\tiny save earlier results to reduce computation\\
+sometimes called memoization\\
+examples: common parsing algorithms, Fibonacci
+}\\
+\scriptsize{Others}
+{\tiny backtracking, branch-and-bound;
+randomized algorithms;
+distributed algorithms (sometimes called swarm optimization);
+transformation 
+}

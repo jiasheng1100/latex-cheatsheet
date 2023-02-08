@@ -1,0 +1,35 @@
+\section{Binary Heaps}
+{\tiny a binary tree where the nodes store items with an ordering relation 
+}\\
+\scriptsize{Properties}\\ 
+{\tiny shape: a complete binary tree (all levels of the tree, except possibly the last one, are full; all empty slots (if any) are to the right of the filled nodes at the lowest level)\\
+heap order: max-heap: parents' keys larger than children's keys; min-heap: parents' keys smaller than children's keys
+}\\
+\scriptsize{Height} {\tiny log n\\
+at least 2**h nodes -> h<=logn\\
+at most 2**(h+1)-1 nodes -> h>=log(n+1)-1
+}\\
+\scriptsize{add new item}\\
+{\tiny add to the first available slot\\
+bubble up until the heap property is satisfied\\
+at most h=logn comparisons/swaps
+}\\
+\scriptsize{remove the min/max}\\ 
+{\tiny item to be removed is at the root\\
+replace root with the element at the last slot\\
+bubble down until the heap property is satisfied
+}\\
+\scriptsize{implementation} {\tiny can be stored efficiently using an array data structure (like any complete binary tree)
+}\\
+\scriptsize{construction} {\tiny for n items, we can construct a heap by inserting each key in O(nlogn) time\\
+Bottom-up construction (O(n) complexity) (if we have the complete list):\\
+1. fill the leaf nodes (h=logn, num of internal nodes=2**h-1, num of leaf nodes=n-2**h-1\\
+2. fill the next level, bubble down if necessary\\
+3. repeat 2 until all elements are inserted and heap property is satisfied
+}\\
+\scriptsize{Python standard heap implementation} {\tiny heapq module\\
+allows maintaining a list(array) based heap\\
+heappush(h,e): insert e(a key-value tuple) into heap h\\
+heappop(h): return the minimum value from heap h\\
+heapify(h): construct a heap from given list heappos(h)
+}
